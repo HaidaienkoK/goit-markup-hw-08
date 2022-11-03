@@ -1,0 +1,266 @@
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  // justify-content: flex-start;
+  justify-content: space-between;
+  padding: 10px 15px;
+  @media (min-width: 768px) {
+    padding: 0 15px 0 15px;
+  }
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--main-focus);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
+
+.logo-part--dark {
+  color: #000000;
+}
+
+.logo-part--light {
+  color: #ffffff;
+}
+
+.navigation {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.menu {
+  display: flex;
+}
+
+.menu__connect {
+  @media screen and (min-width: 768px) {
+    margin-left: 87px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 93px;
+  }
+}
+
+.menu__item {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.menu__link {
+  display: block;
+  padding: 32px 0;
+  // color: var(--main-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--main-focus);
+  }
+}
+
+.current {
+  color: var(--main-focus);
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  background-color: #ffffff;
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff;
+}
+
+.mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobil-menu__link {
+  display: block;
+  padding: 16px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  // color:  var(--main-color);
+  &:hover,
+  &:focus {
+    color: var(--main-focus);
+  }
+}
+
+.btn-menu__icon {
+  fill: #000000;
+  &:hover,
+  &:focus {
+    fill: var(--main-focus);
+  }
+}
+
+.main-contact__tel {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+}
+
+.main-contact__mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+
+
+.main-soc{
+  // height: 30px;
+}
+
+.soc-menu {
+  display: flex;
+}
+
+.soc-menu__link {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+}
+
+//-------
+
+.current::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: var(--main-focus);
+  border-radius: 2px;
+}
+
+.contact {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 95px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.14;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 0;
+  }
+}
+
+.contact__connect {
+  margin-left: auto;
+}
+
+.contact__icon {
+  fill: var(--secondery-color);
+  margin-right: 8px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 1200px) {
+    margin-right: 10px;
+    &.contact__icon--mail {
+      width: 16px;
+      height: 12px;
+    }
+    &.contact__icon--tel {
+      width: 10px;
+      height: 16px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    fill: var(--main-focus);
+  }
+  .contact__link:hover &,
+  .contact__link:focus & {
+    fill: var(--main-focus);
+  }
+}
+
+.contact__link {
+  color: var(--secondery-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 1200px) {
+    &:first-child {
+      margin-right: 50px;
+    }
+  }
+  &:hover,
+  &:focus {
+    color: var(--main-focus);
+  }
+}
