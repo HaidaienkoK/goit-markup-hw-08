@@ -1,5 +1,3 @@
-
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -23,21 +21,28 @@
   top: 50%;
   left: 50%;
   padding: 40px;
-  width: 528px;
-  height: 581px;
+  width: 450px;
+  height: 609px;
   background-color: var(--secondery-color-text);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
   p {
     font-weight: 700;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 1.5;
     text-align: center;
     letter-spacing: 0.03em;
     color: #212121;
     margin-bottom: 30px;
+    @media screen and (min-width: 1200px) {
+      line-height: 1.15;
+    }
   }
 }
 
@@ -104,6 +109,10 @@
     line-height: 1.16;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
+    @media screen and (min-width: 480px) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
   }
   &:focus {
     outline: var(--main-focus) solid 1px;
@@ -129,11 +138,14 @@
   position: absolute;
   left: 0;
   top: 0;
-  transform: translate(12px, 3px);
+  transform: translate(0, 3px);
   border: 1px solid #121212;
   border-radius: 2px;
   fill: transparent;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 1200px) {
+    transform: translate(12px, 3px);
+  }
   .checkbox:checked + & {
     fill: var(--secondery-color-text);
     border: 1px solid var(--main-focus);
@@ -142,22 +154,31 @@
 }
 
 .checkbox-text {
-  margin-left: 24px;
+  margin-left: 8px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: #757575;
+  @media screen and (min-width: 1200px) {
+    margin-left: 24px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .terms {
   margin-left: 4px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--main-focus);
   text-underline-offset: 3px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .modal-form-btn {
